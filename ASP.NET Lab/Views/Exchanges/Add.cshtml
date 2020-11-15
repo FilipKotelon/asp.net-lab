@@ -7,16 +7,16 @@
 <form method="POST">
     <div class="form-group">
         <label asp-for="Name">Item name</label>
-        <input asp-for="Name" class="form-control" />
+        <input asp-for="Name" class="form-control" id="add-name" />
     </div>
 
     <div class="form-group">
         <label asp-for="Description">Description</label>
-        <input asp-for="Description" class="form-control" />
+        <input asp-for="Description" class="form-control" id="add-desc" />
     </div>
 
     <div class="form-check">
-        <input asp-for="IsVisible" class="form-check-input" />
+        <input asp-for="IsVisible" class="form-check-input" id="add-visible" />
         <label asp-for="IsVisible" class="form-check-label">Item visible?</label>
     </div>
 
@@ -27,5 +27,5 @@
 </form>
 
 @section Scripts {
-    <script src="~/js/addNewItem.js"></script>
+    <script src="~/js/addNewItem.js?v=136"></script>
 }
