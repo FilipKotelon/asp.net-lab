@@ -34,12 +34,9 @@ namespace ASP.NET_Lab.Controllers
             _dbContext.Items.Add(entity);
             _dbContext.SaveChanges();
 
-            var items = _dbContext.Items.ToArray<ItemEntity>();
-
             return new AddNewItemResponseModel
             {
                 Message = $"Your item {item.Name} was added.",
-                Items = items,
                 Success = true
             };
         }

@@ -30,12 +30,7 @@
         if (responseJson.success) {
             // 3. un-hide the alertElement when the request has been successful
             alertElement.style.display = "block";
-            alertElement.innerHTML = responseJson.message + " Here is the list of all added items:";
-
-            responseJson.items.forEach(item => {
-                alertElement.innerHTML += `<br> Id: ${item.id}, Name: ${item.name}, Description: ${item.description}, IsVisible: ${item.isVisible}`;
-            })
-            alertElement
+            alertElement.innerHTML = responseJson.message;
         } else {
             console.log(responseJson);
         }

@@ -5,15 +5,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ASP.NET_Lab.Models;
+using ASP.NET_Lab.Database;
+using ASP.NET_Lab.Entities;
 
 namespace ASP.NET_Lab.Controllers
 {
     public class ExchangesController : Controller
     {
+        private readonly ExchangesDbContext _dbContext;
+
+        public ExchangesController(ExchangesDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         [ServiceFilter(typeof(MyCustomActionFilter))]
         public IActionResult Show(string id)
         {
             return View();
+        }
+
+        public IActionResult ShowItems()
+        {
+            var items = _dbContext.Items.ToArray<ItemEntity>();
+
+            return View("ShowItems", items);
         }
 
         [HttpGet]

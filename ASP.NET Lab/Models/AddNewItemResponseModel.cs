@@ -10,6 +10,5 @@ namespace ASP.NET_Lab.Models
     {
         public string Message { get; set; }
         public bool Success { get; set; }
-        public ItemEntity[] Items { get; set; }
     }
 }
